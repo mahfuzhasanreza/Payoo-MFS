@@ -1,11 +1,15 @@
 
-// search: form submit reloading the page
-
-document.getElementById('btn-login').addEventListener('click', function(event){
-    // prevent reloading browser (for form)
+document.getElementById('btn-login').addEventListener('click', function (event) {
+    // prevent reloading browser (for form: form submit reloading the page)
     event.preventDefault();
-    console.log('login button click');
 
-    const phoneNumber=document.getElementById('phone-number').value;
-    console.log(phoneNumber);
+    const phoneNumber = document.getElementById('phone-number').value;
+    const pinNumber = document.getElementById('pin-number').value;
+
+    // temporary check
+    if (phoneNumber === '1' && pinNumber === '1234') {
+        window.location.href = '/home.html';
+    } else {
+        alert('Wrong phone number or pin');
+    }
 })

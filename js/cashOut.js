@@ -22,4 +22,5 @@ document.getElementById('btn-cash-out').addEventListener('click', function (even
     } else {
         alert('Failed to cash out! Please try again');
     }
+    
 });

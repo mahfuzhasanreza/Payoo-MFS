@@ -7,6 +7,11 @@ document.getElementById('btn-cash-out').addEventListener('click', function (even
 
     const pinNumber = getInputFieldValueById('input-cash-out-pin');
 
+    if (isNaN(CashOutMoney)) {
+        alert('Failed to add money');
+        return;
+    }
+
     // temporary check
     if (pinNumber === 1234) {
         const balance = getTextFieldById('account-balance');
@@ -15,6 +20,15 @@ document.getElementById('btn-cash-out').addEventListener('click', function (even
             const newBalance = balance - CashOutMoney;
 
             document.getElementById('account-balance').innerText = newBalance;
+
+            // add to transaction history
+            const div = document.createElement('div');
+            div.classList.add('bg-yellow-300');
+            div.innerHTML = `
+                <h4 class="text-2xl font-bold">Cash Out</h4>
+                <p>${CashOutMoney} withdraw. New Balance ${newBalance}</p>
+            `
+            document.getElementById('transaction-container').appendChild(div);
         } else {
             alert('Your account have not enough money! Please try again');
         }

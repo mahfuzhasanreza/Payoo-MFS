@@ -3,24 +3,23 @@ document.getElementById('btn-cash-out').addEventListener('click', function (even
     // prevent page reload after form submit
     event.preventDefault();
 
-    const CashOutMoney = document.getElementById('input-cash-out').value;
+    const CashOutMoney = getInputFieldValueById('input-cash-out');
 
-    const pinNumber = document.getElementById('input-cash-out-pin').value;
+    const pinNumber = getInputFieldValueById('input-cash-out-pin');
 
     // temporary check
-    if (pinNumber === '1234') {
-        const balance = document.getElementById('account-balance').innerText;
+    if (pinNumber === 1234) {
+        const balance = getTextFieldById('account-balance');
 
-        if (parseFloat(balance) >= parseFloat(CashOutMoney)) {
-            const newBalance = parseFloat(balance) - parseFloat(CashOutMoney);
+        if (balance >= CashOutMoney) {
+            const newBalance = balance - CashOutMoney;
 
             document.getElementById('account-balance').innerText = newBalance;
         } else {
             alert('Your account have not enough money! Please try again');
         }
-
     } else {
         alert('Failed to cash out! Please try again');
     }
-    
+
 });

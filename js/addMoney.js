@@ -4,15 +4,16 @@ document.getElementById('btn-add-money').addEventListener('click', function (eve
     // prevent page reload after form submit
     event.preventDefault();
 
-    const addMoneyInput = document.getElementById('input-add-money').value;
+    const addMoneyInput = getInputFieldValueById('input-add-money');
 
-    const pinNumberInput = document.getElementById('input-pin-number').value;
+    const pinNumberInput = getInputFieldValueById('input-pin-number');
+
 
     // temporary check
-    if (pinNumberInput === '1234') {
-        const balance = document.getElementById('account-balance').innerText;
+    if (pinNumberInput === 1234) {
+        const balance = getTextFieldById('account-balance');
 
-        const newBalance = parseFloat(balance) + parseFloat(addMoneyInput);
+        const newBalance = balance + addMoneyInput;
 
         document.getElementById('account-balance').innerText = newBalance;
     } else {

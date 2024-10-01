@@ -31,6 +31,7 @@
                     <div>
                         <button id="btn-show-add-money" class="btn btn-lg">Add Money</button>
                         <button id="btn-show-cash-out" class="btn btn-lg">Cash Out</button>
+                        <button id="btn-show-transaction" class="btn btn-lg">Transactions</button>
                     </div>
                     <div class="divider"></div>
 
@@ -64,8 +65,8 @@
                                 <label class="label">
                                     <span class="label-text">Amount</span>
                                 </label>
-                                <input id="input-cash-out" type="text" placeholder="Amount"
-                                    class="input input-bordered" required />
+                                <input id="input-cash-out" type="text" placeholder="Amount" class="input input-bordered"
+                                    required />
                             </div>
                             <div class="form-control">
                                 <label class="label">
@@ -80,10 +81,19 @@
                         </form>
                     </div>
                     <!-- cash out end  -->
+                    <!-- transaction start  -->
+                    <div id="transaction-section" class="hidden">
+                        <h2 class="text-3xl text-center">transaction History</h2>
+                        <div class="transaction-container">
+                            
+                        </div>
+                    </div>
+                    <!-- transaction end  -->
                 </div>
             </div>
         </div>
     </main>
+    <script src="js/utilities.js"></script>
     <script src="js/addMoney.js"></script>
     <script src="js/cashOut.js"></script>
     <script src="js/features.js"></script>
